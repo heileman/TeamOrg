@@ -22,3 +22,8 @@ From this point forward, if you enter:
 
 will automatically notice any modified (but not new) files, add them to the index, 
 and commit, all in one step.
+
+To push the project up to github, in the project directory, type the following:
+
+  git remote add origin git@github.com:heileman/TeamOrg.git
+  push origin master

@@ -1,0 +1,6 @@
+.DS_Store
+*.bak
+teamorg/log/*.log
+teamorg/temp/**/*
+temporg/config/database.yml
+teamorg/db/*.sqlite3
