@@ -2,5 +2,23 @@ First create the local repository:
 
   cd ~/development/TeamOrg
   git init
+
+In the project directory, create a .gitignore file, and place the following in it:
+  .DS_Store
+  log/*.log
+  temp/**/*
+  config/database.yml
+  db/*.sqlite3
+
+Now,
+
   git add .
-  git commit -m 'Initial commit'
+  git commit -m "Initial commit"
+
+From this point forward, if you enter:
+
+  git add .
+  git commit -a -m "message"
+
+will automatically notice any modified (but not new) files, add them to the index, 
+and commit, all in one step.
