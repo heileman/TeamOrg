@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 2
+  first_name: Billy
+  last_name: Shocker
+  date_of_birth: 10/1/1994
+  sex: 1
+
+two:
+  id: 1
+  first_name: Lionel
+  last_name: Messi
+  date_of_birth: 1/1/1988
+  sex: 1
+  
+three:
+  id: 3
+  first_name: William
+  last_name: Shocker
+  date_of_birth: 1/1/1938
+  sex: 1

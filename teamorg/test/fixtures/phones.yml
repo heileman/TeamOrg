@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  phone_type: 1
+  number: 5051112222
+
+two:
+  id: 2
+  phone_type: 2
+  number: 5552223333

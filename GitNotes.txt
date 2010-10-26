@@ -1,0 +1,6 @@
+First create the local repository:
+
+  cd ~/development/TeamOrg
+  git init
+  git add .
+  git commit -m 'Initial commit'

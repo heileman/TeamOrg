@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Person:</b>
+  <%= @addresses_person.person_id %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @addresses_person.address_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_addresses_person_path(@addresses_person) %> |
+<%= link_to 'Back', addresses_people_path %>

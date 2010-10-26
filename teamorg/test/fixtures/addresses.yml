@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  address_type: 1
+  line1: 1 LaRambla 
+  line2: 
+  city: Barcelona
+  state: 
+  country: Spain
+  postal_code: M88765
+
+two:
+  id: 2
+  address_type: 1
+  line1: 1 Toolbag Way
+  line2: 
+  city: Albuquerque
+  state: NM
+  country: 
+  postal_code: 87101

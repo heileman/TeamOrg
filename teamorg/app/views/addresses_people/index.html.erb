@@ -1,0 +1,25 @@
+<h1>Listing addresses_people</h1>
+
+<table>
+  <tr>
+    <th>Person</th>
+    <th>Address</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @addresses_people.each do |addresses_person| %>
+  <tr>
+    <td><%= addresses_person.person_id %></td>
+    <td><%= addresses_person.address_id %></td>
+    <td><%= link_to 'Show', addresses_person %></td>
+    <td><%= link_to 'Edit', edit_addresses_person_path(addresses_person) %></td>
+    <td><%= link_to 'Destroy', addresses_person, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Addresses person', new_addresses_person_path %>
