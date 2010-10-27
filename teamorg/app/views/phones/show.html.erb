@@ -2,7 +2,7 @@
 
 <p>
   <b>Number:</b>
-  <%= @phone.number %>
+  <%= number_to_phone(@phone.number, :area_code => true) %>
 </p>
 
 <p>

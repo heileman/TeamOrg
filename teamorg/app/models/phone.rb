@@ -7,8 +7,9 @@ class Phone < ActiveRecord::Base
     {:home => 1, :work => 2, :mobile => 3, :fax => 4, :other => 5}.freeze
   end 
 
-  validates_presence_of :number, :message => "phone number can't be blank!"
-  validates_length_of :number, :is=>10, :message => "phone number must consist of 10 digits!"
+  validates :number,  :presence => true,
+                      :uniqueness => true,
+                      :length => {:minimum =>10, :maximum => 10}
   
   private
   

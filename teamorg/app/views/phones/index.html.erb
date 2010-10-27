@@ -11,7 +11,7 @@
 
 <% @phones.each do |phone| %>
   <tr>
-    <td><%= phone.number %></td>
+    <td><%= number_to_phone(phone.number, :area_code => true) %></td>
     <td><%= phone.phone_types.key(phone.phone_type) %></td>
     <td><%= link_to 'Show', phone %></td>
     <td><%= link_to 'Edit', edit_phone_path(phone) %></td>

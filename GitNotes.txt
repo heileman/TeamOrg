@@ -27,3 +27,9 @@ To push the project up to github, in the project directory, type the following:
 
   git remote add origin git@github.com:heileman/TeamOrg.git
   push origin master
+
+From this point forward, just use:
+
+  push origin master
+
+to push the project up to github

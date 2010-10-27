@@ -2,7 +2,11 @@ class Person < ActiveRecord::Base
   has_and_belongs_to_many :addresses
   has_and_belongs_to_many :emails
   has_and_belongs_to_many :phones
-  
+
+  def sex_types
+    {:male => 1, :female => 2}.freeze
+  end 
+    
   def full_name
     [self.first_name, self.last_name].compact.join(" ")
   end

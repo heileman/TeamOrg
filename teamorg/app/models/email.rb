@@ -5,4 +5,8 @@ class Email < ActiveRecord::Base
     {:home => 1, :work => 2, :other => 3}.freeze
   end
   
+  validates :address, :presence => true, 
+                      :uniqueness => true, 
+                      :email_format => true
+            
 end
