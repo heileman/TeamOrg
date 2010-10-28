@@ -2,7 +2,11 @@ class Person < ActiveRecord::Base
   has_and_belongs_to_many :addresses
   has_and_belongs_to_many :emails
   has_and_belongs_to_many :phones
+  has_one :athlete
+  has_and_belongs_to_many :athletes, :join_table => "athletes_parents"
 
+  validate :last_name, :presence => true
+  
   def sex_types
     {:male => 1, :female => 2}.freeze
   end 

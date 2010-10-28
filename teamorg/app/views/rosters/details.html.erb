@@ -1,0 +1,72 @@
+<h1><%=h @roster.team.name %> - <%=h @roster.name %></h1>
+
+<table>
+  <tr>
+	<th>#</th>
+    <th>Name</th>	
+	<th>DOB</th>
+    <th>Address</th>
+	<th>Phone</th>
+	<th>Email</th>
+  </tr>
+
+<% @roster.athletes.each do |athlete| %>
+  <tr>
+    <td><%=h athlete.jersey_number %></td>
+    <td><b><%=h athlete.person.full_name %></b></td>
+	<td><%=h athlete.person.date_of_birth %></td>
+	<td>
+		<% num_addresses = athlete.person.addresses.length %>
+		<% athlete.person.addresses.each_with_index do |address,i| %>
+			<%=h address.to_s %>
+			<%=h ", " if i != num_addresses-1 %>
+		<% end %>
+	</td>
+	<td>
+		<% num_phones = athlete.person.phones.length %>
+		<% athlete.person.phones.each_with_index do |phone,i| %>
+			<%=h number_to_phone(phone.number, :area_code => true) %>
+			<%=h "[" + phone.phone_types.key(phone.phone_type).to_s + "]" if phone.phone_type %>
+			<%=h ", " if i != num_phones-1 %>
+		<% end %>
+	</td>
+	<td>
+		<% num_emails = athlete.person.emails.length %>
+		<% athlete.person.emails.each_with_index do |email,i| %>
+			<%=h email.address %>
+			<%=h ", " if i != num_emails-1 %>
+		<% end %>
+	</td>
+  </tr>
+  <% athlete.parents.each do |parent| %>
+    <tr>
+	  <td></td>
+	  <td>&nbsp;&nbsp;<%=h p parent.full_name %></td>
+	  <td></td>	
+	  <td>
+		<% num_addresses = parent.addresses.length %>
+		<% parent.addresses.each_with_index do |address,i| %>
+			<%=h address.to_s %>
+			<%=h ", " if i != num_addresses-1 %>
+		<% end %>
+	</td>
+	<td>
+		<% num_phones = parent.phones.length %>
+		<% parent.phones.each_with_index do |phone,i| %>
+			<%=h number_to_phone(phone.number, :area_code => true)%>
+			<%=h ", " if i != num_phones-1 %>
+		<% end %>
+	</td>
+	<td>
+		<% num_emails = parent.emails.length %>
+		<% parent.emails.each_with_index do |email,i| %>
+			<%=h email.address %>
+			<%=h ", " if i != num_emails-1 %>
+		<% end %>
+	</td>
+    </tr>
+  <% end %>
+<% end %>
+</table>
+
+<br />

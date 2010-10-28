@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101020173347) do
+ActiveRecord::Schema.define(:version => 20101027212004) do
 
   create_table "addresses", :force => true do |t|
     t.string   "line1"
@@ -27,6 +27,27 @@ ActiveRecord::Schema.define(:version => 20101020173347) do
   create_table "addresses_people", :id => false, :force => true do |t|
     t.integer  "person_id",  :null => false
     t.integer  "address_id", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "athletes", :force => true do |t|
+    t.integer  "person_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "athletes_parents", :id => false, :force => true do |t|
+    t.integer  "athlete_id", :null => false
+    t.integer  "person_id",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "athletes_rosters", :id => false, :force => true do |t|
+    t.integer  "athlete_id",    :null => false
+    t.integer  "roster_id",     :null => false
+    t.integer  "jersey_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -64,6 +85,21 @@ ActiveRecord::Schema.define(:version => 20101020173347) do
   create_table "phones", :force => true do |t|
     t.integer  "phone_type"
     t.string   "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rosters", :force => true do |t|
+    t.string   "name"
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.integer  "organization_id"
+    t.integer  "current_roster"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

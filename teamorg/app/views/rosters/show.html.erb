@@ -1,0 +1,32 @@
+<h1><%= @roster.team.name %></h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Roster:</b>
+  <%= @roster.name %>
+</p>
+
+<p>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Athlete</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @roster.athletes.each do |athlete| %>
+  <tr>
+    <td><%=h athlete.jersey_number %></td>
+    <td><%=h athlete.person.full_name %></td>
+    <td><%= link_to 'Show', athlete %></td>
+    <td><%= link_to 'Edit', edit_athlete_path(athlete) %></td>
+    <td><%= link_to 'Destroy', athlete, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</p>
+
+<%= link_to 'Edit', edit_roster_path(@roster) %> |
+<%= link_to 'Back', rosters_path %>

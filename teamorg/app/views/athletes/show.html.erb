@@ -1,0 +1,83 @@
+<h1>Athlete Information:</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @athlete.person.full_name %>
+</p>
+
+<p>
+  <b>Date of birth:</b>
+  <%= @athlete.person.date_of_birth %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%= @athlete.person.sex_types.key(@athlete.person.sex) %>
+</p>
+
+<% unless @athlete.parents.empty? %>
+  <p>
+  <table>
+    <tr>
+      <th>Parent/Guardian</th>
+    </tr>
+
+    <% @athlete.parents.each do |parent| %>
+      <tr>
+        <td><%= parent.full_name %></td>
+      </tr>
+    <% end %>
+  </table>
+  </p>
+<% end %>
+
+<h2>Contact Information:</h2>
+
+<p>
+<table>
+  <tr>
+    <th>Address</th>
+  </tr>
+
+  <% @athlete.person.addresses.each do |address| %>
+    <tr>
+      <td><%= address.to_s %>
+	      (<%= address.address_types.key(address.address_type) if address.address_type %>)</td>
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<p>
+<table>
+  <tr>
+    <th>Phone</th>
+  </tr>
+
+  <% @athlete.person.phones.each do |phone| %>
+    <tr>
+      <td><%= number_to_phone(phone.number, :area_code => true) %>     	
+	      (<%= phone.phone_types.key(phone.phone_type) if phone.phone_type %>)</td>
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<p>
+<table>
+  <tr>
+    <th>Email</th>
+  </tr>
+
+  <% @athlete.person.emails.each do |email| %>
+    <tr>
+      <td><%= email.address %>
+		  (<%= email.email_types.key(email.email_type) if email.email_type %>)</td>
+    </tr>
+  <% end %>
+</table>
+</p>
+
+<%= link_to 'Edit', edit_athlete_path(@athlete) %> |
+<%= link_to 'Back', athletes_path %>

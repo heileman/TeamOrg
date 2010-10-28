@@ -1,4 +1,16 @@
 Teamorg::Application.routes.draw do
+  resources :athletes_parents
+
+  resources :athletes_rosters
+
+  resources :rosters do
+    get :details, :on => :member
+  end
+
+  resources :teams
+
+  resources :athletes
+
   resources :people_phones
 
   resources :phones

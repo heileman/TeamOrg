@@ -1,0 +1,27 @@
+<h1>Listing athletes_rosters</h1>
+
+<table>
+  <tr>
+    <th>Athlete</th>
+    <th>Roster</th>
+    <th>Jersey number</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @athletes_rosters.each do |athletes_roster| %>
+  <tr>
+    <td><%= athletes_roster.athlete_id %></td>
+    <td><%= athletes_roster.roster_id %></td>
+    <td><%= athletes_roster.jersey_number %></td>
+    <td><%= link_to 'Show', athletes_roster %></td>
+    <td><%= link_to 'Edit', edit_athletes_roster_path(athletes_roster) %></td>
+    <td><%= link_to 'Destroy', athletes_roster, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Athletes roster', new_athletes_roster_path %>

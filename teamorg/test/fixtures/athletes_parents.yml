@@ -1,13 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  person_id: 1
-  address_id: 1
-
-two:
-  person_id: 2
-  address_id: 2
-  
-three:
+  athlete_id: 1
   person_id: 3
-  address_id: 2

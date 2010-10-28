@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  athlete_id: 1
+  roster_id: 1
+  jersey_number: 10
+
+two:
+  athlete_id: 2
+  roster_id: 1
+  jersey_number: 10
+
